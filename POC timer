@@ -1,0 +1,35 @@
+# Note this misses the actual activity checker in line 17, just assuming activity is true
+
+
+import time
+
+
+inactivity = 0 
+total_time = 0 
+coins = 0
+while True:
+    start_time = time.time()
+    inactivity = time.time()
+    while True:
+        # Calculates total time elapsed
+        total_time = time.time() - start_time
+        # If active found to be true, inactivity time resets to present
+        if True:
+            inactivity = time.time()
+        # Calculates inactivity timer
+        inactive_time = time.time() - inactivity
+        # Checks inactive time, if greater than 1 minute, provide warning, if greater than 2 min, break loop and exit 
+        if inactive_time > 60:
+            print("You have been inactive! Your timer has been stopped, please rerun program to continue!")
+        elif inactive_time > 120: # realisitcally, 2nd warning true cause break
+            print("You are inactive please focus! If you do, you'll increase chances to get laid by 5% per coin earned! -Kevin Li")
+        # every x amount of time, user gets coins
+        if total_time > 5*(coins+1):
+            coins += 1
+            print("You've earned a coin! To a total of " + str(coins) + " coins, keep up the awesome work!")
+     
+
+
+
+        
+
